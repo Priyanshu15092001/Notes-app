@@ -1,0 +1,37 @@
+.defaultContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.imgContainer{
+    width: 40%;
+}
+
+.imgContainer img{
+    object-fit: fit;
+    width: 100%;
+}
+
+.subHeader p{
+    text-align: center;
+    line-height: 1.4rem;
+}
+
+.footer{
+    position: relative;
+    top: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer img{
+    width: 1rem;
+}

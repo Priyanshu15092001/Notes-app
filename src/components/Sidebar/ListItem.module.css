@@ -1,0 +1,53 @@
+
+.itemContainer{
+    width: 100%;
+    /* min-height: 5rem; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10%;
+}
+
+
+.highlight {
+    background-color: rgba(47, 47, 47, 0.17);
+    border-radius: 20px;
+}
+
+.circleContainer{
+    width: 20%;
+    padding: 10px;
+}
+
+.circle{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.circle h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    
+}
+
+.title{
+    width: 80%;
+    padding: 10px;
+}
+
+.title h2{
+    font-size: 1.3rem;
+    letter-spacing: 0.01em;
+    flex-grow: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
