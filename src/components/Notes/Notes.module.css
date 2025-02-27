@@ -13,18 +13,19 @@
     gap: 2rem;
     justify-content: flex-start;
     align-items: center;
-    padding: 5px 10px 5px 20px;
+    padding: 10px 10px 5px 20px;
 }
 
 .circleContainer{
     width: 6%;
+    /* font-size: 1rem; */
     /* padding: 10px; */
 }
 
 .circle{
     background-color: aqua;
-    width: 3.5vw;
-    height: 3.5vw;
+    width: 4vw;
+    height: 4vw;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -36,11 +37,12 @@
     color: #fff;
     font-weight: 500;
     letter-spacing: 0.01em;
-    font-size: 1.3vw;
+    font-size: 1.2em
 }
 
 .title{
-    width:94%
+    width:94%;
+    padding:10px
 }
 
 .title h2{
@@ -65,7 +67,7 @@
     padding: 1rem;
 }
 
-/* Scrollbar for WebKit (Chrome, Edge, Safari) */
+
 .content::-webkit-scrollbar {
     width: 8px; /* Scrollbar width */
 }
@@ -78,7 +80,7 @@
 
 /* Scrollbar Thumb */
 .content::-webkit-scrollbar-thumb {
-    background: #fff; /* Dark gray scrollbar */
+    background: #fff; 
     border-radius: 10px;
     border: 2px solid #D9D9D9;
 }
@@ -134,21 +136,133 @@
     width: 100%;
 }
 
-/* Scrollbar for WebKit (Chrome, Edge, Safari) */
+
 textarea::-webkit-scrollbar {
-    width: 8px; /* Scrollbar width */
+    width: 8px; 
     
 }
 
-/* Scrollbar Track */
+
 textarea::-webkit-scrollbar-track {
     background: #D9D9D9;
     
 }
 
-/* Scrollbar Thumb */
+
 textarea::-webkit-scrollbar-thumb {
-    background: #fff; /* Dark gray scrollbar */
+    background: #fff; 
     border-radius: 10px;
     border: 2px solid #D9D9D9;
+}
+
+
+
+@media screen and (min-width:1920px) {
+    
+
+    .title h2{
+        font-size: 2.4rem;
+    }
+
+    .circle h2{
+        font-size: 2em;
+    }
+
+    .innerBox textarea{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .header{
+        justify-content: flex-start;
+        gap: 5%;
+    }
+
+  
+    .title{
+        width: 50%;
+    }
+
+    .imgBtn{
+        width: 2.5rem;
+        /* height: 2rem; */
+        background: transparent;
+    }
+
+    .imgBtn img{
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .circleContainer{
+        width: 10%;
+    }
+
+    .circle{
+        width: 8vw;
+        height: 8vw;
+        font-size: 1rem;
+    }
+
+    .circle h2{
+        font-size: 1em;
+    }
+
+    .innerBox textarea{
+        
+        font-size: 1.6em;
+        
+    
+    }
+    
+}
+
+
+@media screen and (max-width:426px) {
+
+
+    .header{
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .circle{
+        width: 13vw;
+        height: 13vw;
+    }
+
+    .title h2{
+        font-size: 1.4rem;
+    }
+
+    .innerBox textarea{
+        
+        font-size: 1.4em;
+        
+    
+    }
+
+
+}
+
+@media screen and (max-width:376px) {
+    /* .circle{
+        width: 15vw;
+        height: 15vw;
+    } */
+
+    .title h2{
+        font-size: 1.2rem;
+    }
+    
+
+    .innerBox textarea{
+        
+        font-size: 1em;
+        
+    
+    }
 }

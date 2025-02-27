@@ -9,14 +9,14 @@ const NoteItem = ({ note }) => {
           month: "short",
           year: "numeric",
         })
-      : "Unknown Date"; // Fallback text
+      : "Unknown Date"; 
 
 
       const formattedTime = date
   ? date.toLocaleTimeString("en-US", {
       hour: "numeric",
       minute: "2-digit",
-      hour12: true, // Ensures AM/PM format
+      hour12: true, 
     })
   : "Invalid Time";
 

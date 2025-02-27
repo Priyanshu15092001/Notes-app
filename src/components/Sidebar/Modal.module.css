@@ -29,29 +29,35 @@
 .input{
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     gap: 2rem;
     margin-top: 1rem;
+    font-size: 1rem;
 }
 
 .input label{
     font-weight: 600;
+    /* width: 30%; */
 }
 
 input[type="text"]{
     outline: none;
     border-radius: 10px;
     padding: 5px;
-    width: 15vw;
+    /* width: 15vw; */
+    width: 60%;
     border: 2px solid #CCCCCC;
     letter-spacing: 0.01em;
     font-weight: 400;
+    font-size: 1rem;
 }
 
 .colorOptions {
     display: flex;
-    /* justify-content: center; */
+    justify-content: space-around;
     align-items: center;
-    gap: 10px;
+    /* width: 15vw; */
+    width: 60%;
     
 }
 
@@ -70,13 +76,157 @@ input[type="text"]{
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
+.btnContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .createBtn{
-    position: relative;
+    
     margin-top: 1.5rem;
     width:7vw;
     height: 1.5rem;
-    left: 20vw;
+    
     border-radius: 8px;
     background-color: #001F8B;
     color: #fff;
 }
+
+@media screen and (min-width:2561px) {
+    .modal h2{
+        font-size: 2.6rem;
+    }
+
+    .input{
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    input[type="text"]{
+        width: 60%;
+        font-size: 2rem;
+    }
+
+    .createBtn{
+        width:8vw;
+        height: 4vh;
+        font-size: 1.6rem;
+    }
+}
+
+
+@media screen and (min-width:1920px) and (max-width:2560px) {
+    .modal h2{
+        font-size: 2rem;
+    }
+
+    .input{
+        font-size: 1.4rem;
+        margin-top: 1.3rem;
+    }
+
+    input[type="text"]{
+        width: 60%;
+        font-size: 1.4rem;
+    }
+
+    .colorOptions{
+        width: 60%;
+    }
+
+    .createBtn{
+        width:8vw;
+        height: 4vh;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:1025px) {
+    .modal{
+        width:50vw;
+    }
+
+    .colorCircle{
+        width: 3vw;
+        height: 3vw;
+    }
+
+
+}
+
+@media screen and (max-width:768px){
+    .modal{
+        width: 70%;
+    }
+
+    .input{
+        gap: 2%;
+        
+    }
+
+    input[type="text"]{
+        width: 60%;
+    }
+
+    /* .input label{
+        width: 40%;
+    } */
+
+    .colorOptions{
+        width: 60%;
+    }
+
+    .colorCircle{
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .btnContainer{
+        justify-content: center;
+    }
+
+    .createBtn{
+        width: 18vw;
+    }
+}
+
+@media screen and (max-width:426px) {
+    .modal{
+        width: 90%;
+    }
+
+    .input label{
+        font-size: 14px;
+        /* gap: 1rem; */
+    }
+
+    input[type="text"]{
+        /* width: 35vw; */
+        font-size: 14px;
+    }
+
+
+    .colorCircle{
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .btnContainer{
+        justify-content: center;
+    }
+
+    .createBtn{
+        width: 30vw;
+    }
+}
+
+/* @media screen and (min-width:320px) and (max-width:375px) {
+
+
+
+    .colorCircle{
+        width: 6vw;
+        height: 6vw;
+    }
+
+} */

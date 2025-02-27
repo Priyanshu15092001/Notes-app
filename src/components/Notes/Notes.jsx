@@ -2,11 +2,29 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "./Notes.module.css";
 import NoteItem from "./NoteItem";
 import { NotesContext } from "../../contexts/NotesContext";
+
+import backBtn from "../../assets/content/back-btn.svg"
+import { useNavigate } from "react-router-dom";
+
 const Notes = () => {
   // const [note, setNote] = useState({message:"", createdAt:null});
   const [message, setMessage] = useState("");
 
   const { notes, updateNotes, group, addNotes } = useContext(NotesContext);
+  const navigate = useNavigate(); // For mobile navigation
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Track screen size
+
+  // Update screen size on resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => {window.removeEventListener("resize", handleResize)
+    
+    };
+  }, []);
+
+
+  
   const handleSubmit = () => {
     // console.log("clicked");
 
@@ -28,14 +46,41 @@ const Notes = () => {
   return (
     <div className={styles.notesContainer}>
       <div className={styles.header}>
-        <div className={styles.circleContainer}>
-          <div className={styles.circle} style={{ background: group.color }}>
-            <h2>{group.nickname}</h2>
-          </div>
-        </div>
-        <div className={styles.title}>
-          <h2>{group.title}</h2>
-        </div>
+        {isMobile ? (
+          <>
+
+           
+            <button className={styles.imgBtn} onClick={()=>navigate(-1)}>
+              <img src={backBtn} alt="back-btn" />
+            </button>
+            
+            <div className={styles.circleContainer}>
+              <div
+                className={styles.circle}
+                style={{ background: group.color }}
+              >
+                <h2>{group.nickname}</h2>
+              </div>
+            </div>
+            <div className={styles.title}>
+              <h2>{group.title}</h2>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={styles.circleContainer}>
+              <div
+                className={styles.circle}
+                style={{ background: group.color }}
+              >
+                <h2>{group.nickname}</h2>
+              </div>
+            </div>
+            <div className={styles.title}>
+              <h2>{group.title}</h2>
+            </div>{" "}
+          </>
+        )}
       </div>
       <div className={styles.content}>
         {notes.length != 0 ? (
@@ -49,21 +94,20 @@ const Notes = () => {
           <textarea
             name="message"
             id="message"
-            placeholder="Enter your text here.........."
+            placeholder="Enter your text here......."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                handleSubmit();
+              }
+            }}
           ></textarea>
           <div className={styles.btnContainer}>
             <button
               disabled={message.trim().length > 0 ? false : true}
               onClick={handleSubmit}
-
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  event.preventDefault()
-                  handleSubmit();
-                }
-              }}
               className={styles.btn}
             >
               <svg

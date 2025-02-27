@@ -9,20 +9,28 @@ const colors = [
   "#0047FF",
   "#6691FF",
 ];
-const Modal = ({ isOpen, updateModal, renderComponent, setRenderComponent }) => {
-  
-
+const Modal = ({
+  isOpen,
+  updateModal,
+  renderComponent,
+  setRenderComponent,
+}) => {
   const getLastId = () => Number(localStorage.getItem("lastId")) || 1;
 
-  const [formData, setFormData] = useState({id:getLastId(), title: "",nickname:"", color: null, contents:[]});
-
+  const [formData, setFormData] = useState({
+    id: getLastId(),
+    title: "",
+    nickname: "",
+    color: null,
+    contents: [],
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     const newId = formData.id + 1;
 
-    const newGroup=addGroup()
+    const newGroup = addGroup();
 
     // Store the new object in localStorage (using unique key)
     localStorage.setItem(formData.id, JSON.stringify(newGroup));
@@ -30,11 +38,16 @@ const Modal = ({ isOpen, updateModal, renderComponent, setRenderComponent }) => 
     // Update last stored ID in localStorage
     localStorage.setItem("lastId", newId);
 
+    setFormData({
+      id: newId,
+      title: "",
+      nickname: "",
+      color: null,
+      contents: [],
+    });
 
-    setFormData({ id: newId, title: "", nickname: "", color: null, contents: []});
-   
-    updateModal(false)
-    setRenderComponent(!renderComponent)
+    updateModal(false);
+    setRenderComponent(!renderComponent);
   };
 
   const getInitials = (sentence) => {
@@ -51,10 +64,8 @@ const Modal = ({ isOpen, updateModal, renderComponent, setRenderComponent }) => 
   };
 
   const addGroup = () => {
-
-    
     // console.log(formData);
-    
+
     const newGroup = {
       ...formData,
       id: formData.id,
@@ -62,8 +73,7 @@ const Modal = ({ isOpen, updateModal, renderComponent, setRenderComponent }) => 
       contents: [],
     };
 
-     return newGroup
-    
+    return newGroup;
   };
   return (
     <div className={styles.modalOverlay} onClick={() => updateModal(false)}>
@@ -99,14 +109,25 @@ const Modal = ({ isOpen, updateModal, renderComponent, setRenderComponent }) => 
             </div>
           </div>
 
-          <button
-            className={styles.createBtn}
-            disabled={formData.title.trim().length>0 && formData.color!=null?false:true}
-            onClick={handleSubmit}
-            style={{ backgroundColor: formData.title.trim().length>0 && formData.color!=null? "#001F8B" : "#ABABAB" }}
-          >
-            Create
-          </button>
+          <div className={styles.btnContainer}>
+            <button
+              className={styles.createBtn}
+              disabled={
+                formData.title.trim().length > 0 && formData.color != null
+                  ? false
+                  : true
+              }
+              onClick={handleSubmit}
+              style={{
+                backgroundColor:
+                  formData.title.trim().length > 0 && formData.color != null
+                    ? "#001F8B"
+                    : "#ABABAB",
+              }}
+            >
+              Create
+            </button>
+          </div>
         </form>
       </div>
     </div>
