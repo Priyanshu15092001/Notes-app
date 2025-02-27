@@ -48,21 +48,73 @@
 }
 
 
-/* Scrollbar for WebKit (Chrome, Edge, Safari) */
+
 .list::-webkit-scrollbar {
-    width: 8px; /* Scrollbar width */
+    width: 8px; 
 }
 
-/* Scrollbar Track */
+
 .list::-webkit-scrollbar-track {
-    background: #D9D9D9; /* Light gray background */
-    border-radius: 10px; /* Rounded edges */
+    background: #D9D9D9; 
+    border-radius: 10px; 
 }
 
 /* Scrollbar Thumb */
 .list::-webkit-scrollbar-thumb {
-    background: #fff; /* Dark gray scrollbar */
+    background: #fff; 
     border-radius: 10px;
     border: 2px solid #D9D9D9;
 }
 
+@media  screen and (min-width:2560px) {
+    .header h1{
+        font-size: 4rem;
+    }    
+}
+
+@media  screen and (min-width:1920px) {
+    .header h1{
+        font-size: 3rem;
+    }    
+}
+
+@media screen and (max-width:768px){
+
+    .header{
+        height: 10%;
+    }
+
+    .sidebarContainer{
+        width: 100%;
+    }
+
+    .addBtn{
+        width: 10vw;
+        position: sticky;
+        bottom: 8vh;
+        left: 80%;
+    }
+
+    .header{
+        padding-left: 2rem;
+        justify-content: flex-start;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    .addBtn{
+        width:12vw
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:375px) {
+
+    .header h1{
+        font-size: 1.8rem;
+    }   
+
+    .addBtn{
+        width:15vw;
+    }
+}

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "./ListItem.module.css";
-import { useRef } from "react";
+// import { useRef } from "react";
 const ListItem = ({ item , isSelected, onClick }) => {
   
   return (
     <div
     className={`${styles.itemContainer} ${isSelected ? styles.highlight : ""}`}
       
-    // tabIndex={0} // Allows the div to receive focus
+    
     onClick={onClick}
     >
       <div className={styles.circleContainer}>
