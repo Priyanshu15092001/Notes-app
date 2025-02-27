@@ -26,7 +26,7 @@ Pocket Notes is a **note-taking application** that allows users to create, organ
 ### 📱 Mobile View
 ![Mobile View](./src/assets/screenshots/mobile-view1.png)
 ![Mobile View](./src/assets/screenshots/mobile-view2.png)
-![Mobile View](./src/assets/screenshots/Mobile-view3.png)
+![Mobile View](./src/assets/screenshots/mobile-view3.png)
 
 ## 📦 Installation
 
