@@ -20,11 +20,11 @@ const Content = () => {
       }
     }, []);
 
-    useEffect(()=>{
-      if(isMobile && group==null){
-        navigate('/')
+    useEffect(() => {
+      if (isMobile && !group) {
+        navigate("/", { replace: true }); 
       }
-    },[isMobile, group, navigate])
+    }, []);
 
   return (
     <div className={styles.contentContainer}>
