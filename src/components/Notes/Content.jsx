@@ -24,7 +24,7 @@ const Content = () => {
       if(isMobile && group==null){
         navigate('/')
       }
-    })
+    },[isMobile, group, navigate])
 
   return (
     <div className={styles.contentContainer}>
